@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contato</title>
+    <script type="text/javascript" src="js/Validacao.js"></script>
+</head>
+<body>
+    <h1>Contato</h1>
+    <form  name="frmContato"  id="frmContato"  method="post" action="sucesso.html">
+        <label for="Nome">Nome</label><br>
+        <input type="text" name="Nome" id="Nome">
+        <br>
+
+        <label for="Telefone">Telefone</label><br>
+        <input type="text" name="Telefone" id="Telefone">
+        <br>
+
+        <label for="Email">E-mail</label><br>
+        <input type="text" name="Email" id="Email">
+        <br>
+
+        <label for="Cpf">CPF</label><br>
+        <input type="text" name="Cpf" id="Cpf">
+        <br>
+
+        <label for="Bairro">Bairro</label><br>
+        <select name="Bairro" id="Bairro">
+            <option value="0">Selecione uma Opção</option>
+            <option value="1">São Miguel</option>
+            <option value="2">Itaim Paulista</option>
+            <option value="3">Penha</option>
+        </select>
+        <br>
+
+        <label>Forma de Contato</label><br>
+        <input type="radio" name="FormaContato" 
+        value="WhatsApp" id="opcWhatsApp"><label for="opcWhatsApp">WhatsApp</label>
+        <input type="radio" name="FormaContato" 
+        value="Telefone" id="opcTelefone"><label for="opcTelefone">Telefone</label>
+        <input type="radio" name="FormaContato" 
+        value="Email" id="opcEmail"><label for="opcEmail">Email</label>
+        <br>
+
+        <label>Serviço de Interesse</label><br>
+        <input type="checkbox" name="Servico" id="Cabeleireiro"> 
+        <label for="Cabeleireiro">Cabeleireiro</label>
+        
+        <input type="checkbox" name="Servico" id="Manicure"> 
+        <label for="Manicure">Manicure</label>
+        
+        <input type="checkbox" name="Servico" id="Maquiagem"> 
+        <label for="Maquiagem">Maquiagem</label>
+        
+        <input type="checkbox" name="Servico" id="Podologia"> 
+        <label for="Podologia">Podologia</label>
+
+        <input type="checkbox" name="Servico" id="Sobrancelha"> 
+        <label for="Sobrancelha">Sobrancelha</label>
+        <br><br>
+
+        <input type="button" name="BtnEnviar" id="BtnEnviar" value="Enviar" onclick="ValidarFormulario();">
+    </form>
+    
+</body>
+</html>
