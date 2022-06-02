@@ -24,12 +24,43 @@ function ValidarFormulario() {
   }
 
   if (document.getElementById("Cpf").value.trim() == "") {
-    erro = erro += "O Campo CPF é Obrigatório";
+    erro = erro += "O Campo CPF é Obrigatório\n";
   }
   else if (validarCPF(document.getElementById("Cpf").value) == false){
 
     erro += "- O CPF é inválido!\n"
   }
+
+  if(document.getElementById("Bairro").selectedIndex == 0){
+    erro += '- O campo Bairro é Obrigatorio \n'
+  }
+
+  let opcoes = document.getElementsByName('FormaContato');
+  let selecionados = 0;
+  for (let i=0; i<opcoes.length; i++){
+    if(opcoes[i].checked){
+      selecionados += 1 ;
+      break;
+    }
+  }
+  if (selecionados == 0){
+    erro += "- o Campo Forma de Contato é Obrigatório\n";
+  }
+  
+  let opcServico = document.getElementsByName('Servico');
+  let slc = 0;
+  for (let i=0; i<opcServico.length; i++) {
+    if (opcServico[i].checked){
+      slc +=1 ;    
+    }
+  }
+
+  if( slc< 2){
+    erro += "- o Campo Serviço é Obrigatório 2 Serviços Selecionados\n";
+  }
+
+
+
 
   if (erro != "") {
     alert("ATENÇÃO!\n\n" + erro);
