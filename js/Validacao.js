@@ -4,35 +4,35 @@ function ValidarFormulario() {
   //  Campo Nome
 
   if (document.getElementById("Nome").value.trim() == "") {
-    erro = "O Campo Nome é Obrigatório\n";
+    erro = "-O Campo Nome é Obrigatório<br>";
   }
 
   if (document.getElementById("Telefone").value.trim() == "") {
-    erro = erro += "O Campo Telefone é Obrigatório\n";
+    erro = erro += "-O Campo Telefone é Obrigatório<br>";
   }
   else if(telefone_validation(document.getElementById("Telefone").value)==false){
-    erro+= "O Telefone Digitado é Inválido\n";
+    erro+= "-O Telefone Digitado é Inválido<br>";
 
   }
 
   if (document.getElementById("Email").value.trim() == "") {
-    erro = erro += "O Campo E-mail é Obrigatório\n";
+    erro = erro += "-O Campo E-mail é Obrigatório<br>";
   }
   else  if(validateEmail(document.getElementById("Email").value)==false){
-    erro+= "O E-mail Digitado é Inválido\n";
+    erro+= "-O E-mail Digitado é Inválido<br>";
 
   }
 
   if (document.getElementById("Cpf").value.trim() == "") {
-    erro = erro += "O Campo CPF é Obrigatório\n";
+    erro = erro += "-O Campo CPF é Obrigatório<br>";
   }
   else if (validarCPF(document.getElementById("Cpf").value) == false){
 
-    erro += "- O CPF é inválido!\n"
+    erro += "-O CPF é inválido!<br>"
   }
 
   if(document.getElementById("Bairro").selectedIndex == 0){
-    erro += '- O campo Bairro é Obrigatorio \n'
+    erro += '-O campo Bairro é Obrigatorio <br>'
   }
 
   let opcoes = document.getElementsByName('FormaContato');
@@ -44,7 +44,7 @@ function ValidarFormulario() {
     }
   }
   if (selecionados == 0){
-    erro += "- o Campo Forma de Contato é Obrigatório\n";
+    erro += "-O Campo Forma de Contato é Obrigatório<br>";
   }
   
   let opcServico = document.getElementsByName('Servico');
@@ -56,14 +56,22 @@ function ValidarFormulario() {
   }
 
   if( slc< 2){
-    erro += "- o Campo Serviço é Obrigatório 2 Serviços Selecionados\n";
+    erro += "-O Campo Serviço é Obrigatório 2 Serviços Selecionados\n";
   }
 
 
 
 
   if (erro != "") {
-    alert("ATENÇÃO!\n\n" + erro);
+    // coloca o conteudo na div erro do html por isso o .html
+    $('#erro').html("ATENÇÃO!<br><br>"+ erro);
+
+    $('#erro').modal({
+      fadeDuration:400,
+      fadeDelay: 1.20,
+    });
+
+
     return false;
   } else {
     document.getElementById("frmContato").submit();
