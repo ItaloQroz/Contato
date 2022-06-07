@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="js/jquery.mask.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <title>Contato</title>
-    <script type="text/javascript" src="js/Validacao.js"></script>
+    
 </head>
 <body>
     <h1>Contato</h1>
@@ -65,6 +64,20 @@
 
         <input type="button" name="BtnEnviar" id="BtnEnviar" value="Enviar" onclick="ValidarFormulario();">
     </form>
+
+    <div id="erro" class="modal">
+        <p>Aqui Vão Aparecer Os Erros</p>
+    </div>
     
+    <!-- Jquery -->
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <!-- JqueryMask -->
+    <script type="text/javascript" src="js/jquery.mask.js"></script>
+    <!--  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <!-- Validação -->
+    <script type="text/javascript" src="js/Validacao.js"></script>
+
+
 </body>
 </html>
